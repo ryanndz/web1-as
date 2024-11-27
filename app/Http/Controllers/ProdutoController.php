@@ -28,9 +28,9 @@ public function store(Request $request)
 }
 
 public function edit($id)
-{
+{  $categorias = Categoria::all(); 
    $produto = Produto::findOrFail($id);
-   return view('produto.edit', compact('produto'));
+   return view('produto.edit', compact('produto','categorias'));
 }
 
 public function update(Request $request, $id)
